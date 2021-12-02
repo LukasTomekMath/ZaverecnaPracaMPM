@@ -1,0 +1,98 @@
+%\documentclass[a4paper]{book} % 
+\documentclass[a4paper,twoside]{book} % obojstranna tlac
+
+% ============== PREAMBULA ============== (nacitanie balikov a podobne)
+
+%definovanie verzie dokumentu (pdf/tlacena)
+\usepackage{etoolbox}
+\newbool{printVersion} % premenna pre volbu verzie
+%\booltrue{printVersion} % tlacena: odkomentovat, pdf: nechat zakomentovanie
+
+% geometria a formatovanie stran
+\pagestyle{plain} % defaultny styl stran (plain/headings/empty/myheadings)
+
+\ifbool{printVersion}{
+	\usepackage[top=2.5cm, bottom=2.5cm, left=3.5cm, right=2.0cm]{geometry} % okraje
+}{
+	\usepackage[top=2.0cm, bottom=2.0cm, left=2.0cm, right=2.0cm]{geometry} % okraje
+}
+
+
+% jazyk a kodovanie
+\usepackage[utf8]{inputenc} % input encoding
+\usepackage[main=slovak,english]{babel}  % primarny jazyk: SK, dalsie jazyky: EN
+\usepackage{csquotes} % uvodzovky
+
+% bibliografia
+\usepackage{expl3}
+\usepackage[style=iso-numeric,backend=bibtex,giveninits=true,sorting=nyt]{biblatex}
+\addbibresource{literatura.bib}
+
+% fromatovanie
+\usepackage{indentfirst} % odsadenie prveho odstavca
+
+% male popisy obrazkov a grafika
+\usepackage[small]{caption}
+\usepackage[dvips]{graphicx}
+\usepackage{wrapfig} % obrazky obtekane textom
+\usepackage{xcolor}
+\graphicspath{{figures/}} % priecinok s obrazkami
+
+
+% matematicke vyrazy
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{verbatim}
+
+\usepackage{pdfpages} % vlozenie stran z ineho pdf (musi byt za graphics)
+
+\ifbool{printVersion}{ % hyperreferencia v pdf verzii
+}{
+	\usepackage{hyperref} % hyperreferencia
+	\hypersetup{colorlinks, % farby linkov
+				citecolor=red,
+				linkcolor=blue,
+				urlcolor=blue}
+}
+
+% dalsie uzitocne baliky
+%\usepackage[boxed,lined]{algorithm2e} % pseudokody
+
+
+
+% ============== DOKUMENT ==============
+\begin{document}
+	% ====== Uvodne casti ======
+	\input{Obal}
+	\input{Titulny_list}
+	\pagestyle{empty}
+	\includepdf[pages=-,pagecommand={}]{documents/zadanie_AIS.pdf} % stiahnete z AIS
+	\thispagestyle{empty}
+%	\includepdf[pages=-,pagecommand={}]{documents/Pokyny_BP_2015.pdf}
+	\input{Prehlasenie}
+	\input{Podakovanie}
+	\input{Abstrakt}
+%	
+	\pagestyle{plain}
+	\input{Predhovor}
+	\tableofcontents
+	
+	%\cleardoublepage
+%	\input{Zoznam_priloh}
+%	\input{Zoznam_skratiek}
+
+	% ====== Jadro prace ======
+	\include{Uvod}
+	\include{Kapitola1}
+	\include{Kapitola2}
+	\include{Kapitola3}
+	\include{Zaver}
+
+	% ====== Bibliografia a prilohy ======
+%	\nocite{*} % Vypise v bibliografii aj zroje, ktore neboli citovane
+	\printbibliography
+	
+	%\includepdf[pages=-,pagecommand={}]{documents/priloha1.pdf} % pripadne prilohy
+\end{document}
