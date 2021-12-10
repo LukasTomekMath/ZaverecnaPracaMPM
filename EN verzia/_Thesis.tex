@@ -20,13 +20,13 @@
 
 % jazyk a kodovanie
 \usepackage[utf8]{inputenc} % input encoding
-\usepackage[main=slovak,english]{babel}  % primarny jazyk: SK, dalsie jazyky: EN
+\usepackage[main=english,slovak]{babel}  % primarny jazyk: EN, dalsie jazyky: SK
 \usepackage{csquotes} % uvodzovky
 
 % bibliografia
 \usepackage{expl3}
 \usepackage[style=iso-numeric,backend=bibtex,giveninits=true,sorting=nyt]{biblatex}
-\addbibresource{literatura.bib}
+\addbibresource{references.bib}
 
 
 % fromatovanie
@@ -50,15 +50,15 @@
 \usepackage{pdfpages} % vlozenie stran z ineho pdf (musi byt za graphics)
 
 \ifbool{printVersion}{
-	% hyperreferencia v tlacenej verzii
+	 % hyperreferencia v tlacenej verzii
 	\usepackage[hidelinks]{hyperref} % hyperreferencia
 }{
 	% hyperreferencia v pdf verzii
 	\usepackage{hyperref} % hyperreferencia
 	\hypersetup{colorlinks, % farby linkov
-		citecolor = black,
-		linkcolor = blue,
-		urlcolor = blue}
+				citecolor = black,
+				linkcolor = blue,
+				urlcolor = blue}
 }
 
 % dalsie uzitocne baliky
@@ -69,18 +69,18 @@
 % ============== DOKUMENT ==============
 \begin{document}
 	% ====== Uvodne casti ======
-	\input{Obal}
-	\input{Titulny_list}
+	\input{Cover}
+	\input{Title_page}
 	\pagestyle{empty}
 	\includepdf[pages=-,pagecommand={}]{documents/zadanie_AIS.pdf} % stiahnete z AIS
 	\thispagestyle{empty}
 %	\includepdf[pages=-,pagecommand={}]{documents/Pokyny_BP_2015.pdf}
-	\input{Prehlasenie}
-	\input{Podakovanie}
-	\input{Abstrakt}
+	\input{Declaration}
+	\input{Acknowledgement}
+	\input{Abstract}
 	
 	\pagestyle{plain}
-	\input{Predhovor}
+	\input{Foreword}
 	\tableofcontents
 	
 	%\cleardoublepage
@@ -88,11 +88,12 @@
 %	\input{Zoznam_skratiek}
 
 	% ====== Jadro prace ======
-	\include{Uvod}
-	\include{Kapitola1}
-	\include{Kapitola2}
-	\include{Kapitola3}
-	\include{Zaver}
+	\include{Introduction}
+	\include{Chapter1}
+	\include{Chapter2}
+	\include{Chapter3}
+	\include{Conclusions}
+	\include{Resume}
 
 	% ====== Bibliografia a prilohy ======
 %	\nocite{*} % Vypise v bibliografii aj zroje, ktore neboli citovane

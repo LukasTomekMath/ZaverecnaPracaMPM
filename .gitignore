@@ -1,0 +1,11 @@
+*.aux
+*.out
+*.log
+*.blg
+*.bbl
+*.xml
+*.toc
+SK verzia/_Zaverecna_praca-blx.bib
+SK verzia/_Zaverecna_praca.synctex.gz
+*.gz
+EN verzia/_Thesis-blx.bib
