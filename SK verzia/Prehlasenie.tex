@@ -1,6 +1,9 @@
-\null
+\ifbool{printVersion}{
+	\cleardoublepage % ak to vychadza na parnu stranu, vlozi sa prazdna strana
+}
+
+\
 \vfill
-\thispagestyle{empty}
 
 \subsection*{Čestné prehlásenie}
 
@@ -12,13 +15,5 @@ Prehlasujem, že som túto záverečnú prácu vypracoval/a samostatne pod veden
 \newline
 
 \begin{flushright}
-	Meno Priezvisko$\qquad$
+	Meno Priezvisko $\qquad$
 \end{flushright}
-\newpage
-
-\ifbool{printVersion}{ % prazdna strana
-	\thispagestyle{empty}
-	\
-	\newpage
-}
-\

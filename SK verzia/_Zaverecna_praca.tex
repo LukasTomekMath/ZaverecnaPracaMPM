@@ -1,7 +1,7 @@
-\documentclass[a4paper,twoside]{book} % obojstranna tlac
-%\documentclass[a4paper]{book} % jednostranna tlac
+\documentclass[a4paper]{book}
 
 % ============== PREAMBULA ============== (nacitanie balikov a podobne)
+% Ctrl+klik na balik zobrazi dokumentaciu k baliku (minimalne v TeXstudiu)
 
 %definovanie verzie dokumentu (pdf/tlacena)
 \usepackage{etoolbox}
@@ -10,7 +10,6 @@
 
 % geometria a formatovanie stran
 \pagestyle{plain} % defaultny styl stran (plain/headings/empty/myheadings)
-
 \ifbool{printVersion}{
 	\usepackage[top=2.5cm, bottom=2.5cm, left=3.5cm, right=2cm]{geometry} % odporucane okraje
 }{
@@ -23,6 +22,7 @@
 \usepackage[main=slovak,english]{babel}  % primarny jazyk: SK, dalsie jazyky: EN
 \usepackage{csquotes} % uvodzovky
 
+
 % bibliografia
 \usepackage{expl3}
 \usepackage[style=iso-numeric,backend=bibtex,giveninits=true,sorting=nyt]{biblatex}
@@ -31,24 +31,44 @@
 
 % fromatovanie
 \usepackage{indentfirst} % odsadenie prveho odstavca
+\usepackage{enumitem} % číslovanie ((a),(b),(c),... i), ii), iii),...)
+\usepackage[small]{caption} % male popisy obrazkov
 
-% male popisy obrazkov a grafika
-\usepackage[small]{caption}
-\usepackage[dvips]{graphicx}
+
+% grafika
+\usepackage{graphicx} % obrazky
+\usepackage{subcaption} % podobrazky (subfigure)
+\graphicspath{ {./figures/} } % priecinok s obrazkami
 \usepackage{wrapfig} % obrazky obtekane textom
-\usepackage{xcolor}
-\graphicspath{{figures/}} % priecinok s obrazkami
-
-
-% matematicke vyrazy
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{amssymb}
-
-\usepackage{verbatim}
+\usepackage[dvipsnames]{xcolor} % farby (dvipsnames pridava dalsie farby)
+\usepackage{colortbl} % farebne tabulky
+\usepackage{multirow} % treba pre merge-ovanie budniek v tabulkach
 
 \usepackage{pdfpages} % vlozenie stran z ineho pdf (musi byt za graphics)
 
+
+% matematika
+\usepackage{mathtools} % rozsirenie zakadneho matematickeho balika amsmath
+\usepackage{amssymb} % dalsie symboly a fonty (napriklad pre mnozinu realnych cisel)
+\usepackage[locale=DE]{siunitx} % jednotky SI
+
+% Definície, Vety, Dôkazy...
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{thm}{Veta}[section]
+\newtheorem{defn}[thm]{Definícia}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Dôsledok}
+\newtheorem{rem}[thm]{Poznámka}
+\newtheorem{exmp}[thm]{Príklad}
+
+
+% pseudokod a kod
+\usepackage[czech]{algorithm2e} % pseudokody/algoritmy
+\usepackage{listings} % vkladanie kodu
+
+
+% hyperreferencia
 \ifbool{printVersion}{
 	% hyperreferencia v tlacenej verzii
 	\usepackage[hidelinks]{hyperref} % hyperreferencia
@@ -56,36 +76,43 @@
 	% hyperreferencia v pdf verzii
 	\usepackage{hyperref} % hyperreferencia
 	\hypersetup{colorlinks, % farby linkov
-		citecolor = black,
+		citecolor = red,
 		linkcolor = blue,
 		urlcolor = blue}
 }
 
-% dalsie uzitocne baliky
-%\usepackage[boxed,lined]{algorithm2e} % pseudokody
 
-
+%% Ked uz je praca dlha, pre urychlenie kompilacie sa oplati vkladat len niektore casti/kapitoly
+%\includeonly{
+%%	Uvod,
+%%	Kapitola1,
+%%	Kapitola2,
+%	Kapitola3,
+%	Zaver
+%}
 
 % ============== DOKUMENT ==============
 \begin{document}
 	% ====== Uvodne casti ======
-	\input{Obal}
-	\input{Titulny_list}
 	\pagestyle{empty}
+	\include{Obal} % Do tlacenej verzie v kniznej vazbe sa obalka neviaze, sluzi ako predloha pevnej obalky. Do tepelnej vazby sa viaze.
+	\setcounter{page}{1}
+	\include{Titulny_list}
 	\includepdf[pages=-,pagecommand={}]{documents/zadanie_AIS.pdf} % stiahnete z AIS
-	\thispagestyle{empty}
+	% Pre vlozenie pokynov na vypracovanie, odkomentujte nasledujuce 3 riadky
+%	\ifbool{printVersion}{\cleardoublepage}
+%	
 %	\includepdf[pages=-,pagecommand={}]{documents/Pokyny_BP_2015.pdf}
-	\input{Prehlasenie}
-	\input{Podakovanie}
-	\input{Abstrakt}
-	
+	\include{Prehlasenie}
+	\include{Podakovanie}
 	\pagestyle{plain}
-	\input{Predhovor}
+	\include{Abstrakt}
+	\include{Predhovor}
 	\tableofcontents
 	
-	%\cleardoublepage
-%	\input{Zoznam_priloh}
-%	\input{Zoznam_skratiek}
+%	\cleardoublepage
+%	\include{Zoznam_priloh}
+%	\include{Zoznam_skratiek}
 
 	% ====== Jadro prace ======
 	\include{Uvod}

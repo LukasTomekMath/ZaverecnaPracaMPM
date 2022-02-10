@@ -1,10 +1,14 @@
-\null
+\ifbool{printVersion}{
+	\cleardoublepage % ak to vychadza na parnu stranu, vlozi sa prazdna strana
+}
+
+\
 \vfill
-\thispagestyle{empty}
 
 \subsection*{Declaration}
 
 I declare that this thesis has been composed solely by myself under supervision of my supervisor and using the literature stated in Bibliography.
+
 \vspace{10pt}
 
 \noindent Bratislava 6. 5. 2022 \hfil
@@ -13,11 +17,3 @@ I declare that this thesis has been composed solely by myself under supervision 
 \begin{flushright}
 	Author's Name $\qquad$
 \end{flushright}
-\newpage
-
-\ifbool{printVersion}{ % prazdna strana
-	\thispagestyle{empty}
-	\
-	\newpage
-}
-\
