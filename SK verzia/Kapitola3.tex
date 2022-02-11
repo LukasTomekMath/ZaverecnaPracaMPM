@@ -1,6 +1,6 @@
 \chapter{Základné tipy na písanie v \LaTeX-u} \label{sec:tipy}
 
-Úlohou tejto kapitoly nie je byť príručkou k LaTeX-u. Na internete ich nájdete kopec, výborná je napríklad \href{https://www.overleaf.com/learn}{táto príručka na stránke Overleaf-u} alebo \href{https://en.wikibooks.org/wiki/LaTeX}{táto na eikibooks}. Pri písaní určite pomôžu aj rôzne fóra, napríklad \href{https://tex.stackexchange.com/}{https://tex.stackexchange.com/}. Uvádzam len niekoľko základných tipov pre písanie matematickej záverečnej práce v LaTeX-u. Keď budete pri písaní niečo potrebovať, môžete sa inšpirovať, resp. si to odtiaľto skopírovať a upraviť.
+Úlohou tejto kapitoly nie je byť príručkou k LaTeX-u. Na internete ich nájdete kopec, výborná je napríklad \href{https://www.overleaf.com/learn}{táto príručka na stránke Overleaf-u} alebo \href{https://en.wikibooks.org/wiki/LaTeX}{táto na wikibooks}. Pri písaní určite pomôžu aj rôzne fóra, napríklad \href{https://tex.stackexchange.com/}{https://tex.stackexchange.com/}. Uvádzam len niekoľko základných tipov pre písanie matematickej záverečnej práce v LaTeX-u. Keď budete pri písaní niečo potrebovať, môžete sa inšpirovať, resp. si to odtiaľto skopírovať a upraviť.
 
 Určite existuje veľa užitočných príkazov a balíkov, o~ktorých neviem/nepoužívam ich. Človek sa v LaTeX-u má čo učiť celý život.
 
@@ -124,7 +124,7 @@ Záleží od situácie, čo sa viac hodí. Po častiach definovaná funkcia sa r
 	w(x)=
 	\begin{cases}
 		(x-x_1)^2(x-x_2)^2,& x\in[x_1,x_2],\\
-			0,& \mbox{inak}.
+		0,& \mbox{inak}.
 	\end{cases}
 \end{equation*}
 Prostredie \verb|aligned| vnútri \verb|equation| sa hodí napríklad v tejto situácii
@@ -386,7 +386,7 @@ Z časti \ref{sec:vkladanie_obrazkov} už máme predstavu, ako vkladať existuj�
 	\item \textbf{Vektorová grafika:} PDF, EPS (LaTeX ale aj tak EPS skonvertuje na PDF).
 	\item \textbf{Rastrová grafika:} PNG, JPG (odporúčam radšej PNG, lebo pri ukladaní do JPG resp. JPEG sa kvôli kompresii znižuje kvalita a vzniká šum).
 \end{itemize}
-Kvôli kvalite obrázkov \textbf{preferujte vektorovú grafiku} (ak je to možné). V elektronickej verzii práce sú vektorové obrázky aj po priblížení stále pekné, hladké. Pri grafike, ktorá je tieňovaná (napr. vrstevnicové grafy, plochy v 3D) je lepšie obrázok v dostatočnej kvalite uložiť ako raster. Vo všeobecnosti je dobré obrázky ukladať tak, aby boli orezané, bez veľkého nadbytočného orámovania okolo toho, čo nás zaujíma.
+Kvôli kvalite obrázkov \textbf{preferujte vektorovú grafiku} (ak je to možné a ak vektorový obrázok vyzerá dobre). V elektronickej verzii práce sú vektorové obrázky aj po priblížení stále pekné, hladké. Pri grafike, ktorá je tieňovaná (napr. plochy v 3D) je lepšie obrázok v dostatočnej kvalite uložiť ako raster. Vo všeobecnosti je dobré obrázky ukladať tak, aby boli orezané, bez veľkého nadbytočného orámovania okolo toho, čo nás zaujíma.
 
 
 \paragraph{Mathematica.}
@@ -396,7 +396,7 @@ V softvéri Mathematica robiť viete, preto je dobrý nápad tvoriť grafy/obrá
 	\item \textbf{2D grafika:} \verb|pravý klik na obrázok/Save Graphic As/pdf|. Grafika bude automaticky vektorová.
 	\item \textbf{3D grafika:} \verb|pravý klik na obrázok/Save Graphic As/png| (obrázok treba mať pred uložením dostatočne veľký). Je dobré ešte pred uložením obrázka odstrániť Bounding Box: \verb|pravý klik na| \verb|obrázok/| \verb|Trim| \verb|Bounding Box|, aby okolo obrázka nebolo zbytočne veľa bielej plochy.
 \end{itemize}
-Obrázok sa dá uložiť aj pomocou príkazu \verb|Export| (zíde sa napríklad vtedy, keď potrebujete export automatizovať počas behu kódu alebo si ukladanie zautomatizovať).
+Niekedy potrebujeme obrázok uložiť aj spolu s legendou (prípadne inými grafickými objektami), vtedy treba \verb|pravý klik na pravú lištu/Save Selection As/|, predtým je ešte vhodné vymazať \verb|Out[1]=| na ľavej strane. Obrázok sa dá uložiť aj pomocou príkazu \verb|Export| (zíde sa napríklad vtedy, keď potrebujete export automatizovať počas behu kódu alebo si ukladanie zautomatizovať).
 
 
 \paragraph{MATLAB.}
@@ -474,11 +474,9 @@ Jednoduchá tabuľka bez popisu sa robí takto:
 
 \begin{tabular}{|r|r|r|}
 	\hline
-	2 &   4 & 4.5 \\
-	\hline
+	2 &   4 & 4.5 \\ \hline
 	3 &   1 &   5 \\
-	18 & 4.5 &   5 \\
-	\hline
+	18 & 4.5 &   5 \\ \hline
 \end{tabular}
 
 Tabuľky v záverečnej práci by ale mali mať popis, tu je príklad s popisom: 
@@ -584,7 +582,3 @@ Dá sa pohrať s formátovaním, nastaviť si farby, font a podobne. Nastavenie 
 		return 0;
 	}
 \end{lstlisting}
-
-
-
-

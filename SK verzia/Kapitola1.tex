@@ -1,5 +1,9 @@
-\chapter{V akom editore písať?}\label{sec:aky_editor}
+\chapter{V akom editore písať? Aký kompilátor používať?}\label{sec:aky_editor}
 
-Existuje niekoľko populárnych LaTeX editorov: TeXstudio, TeXmaker, TeXnicCenter, LyX, Overleaf (ten je online),... Dobrý prehľad nájdete \href{https://beebom.com/best-latex-editors/}{napríklad tu}. Odporúčam TeXstudio, dá sa v ňom pracovať veľmi efektívne. V akomkoľvek editore sa naučte \textbf{používať klávesové skratky} (v TeXstudiu ich nájdete Options/Configure TeXstudio/Shortcuts), rýchlo sa orientovať a preklikávať v TeX súbore pomocou referencií, preklikávať sa medzi TeX súborom a pdf, neuveriteľne to zrýchli prácu.
+\subsubsection{Editor}
+Existuje niekoľko populárnych LaTeX editorov: TeXstudio, TeXmaker, TeXnicCenter, LyX, Overleaf (ten je online),... Dobrý prehľad nájdete \href{https://beebom.com/best-latex-editors/}{napríklad tu}. \textbf{Odporúčam TeXstudio}, dá sa v ňom pracovať veľmi efektívne. V akomkoľvek editore sa naučte \textbf{používať klávesové skratky} (v TeXstudiu ich nájdete v Options/Configure TeXstudio/Shortcuts), rýchlo sa orientovať a preklikávať v TeX súbore pomocou referencií, preklikávať sa medzi TeX súborom a pdf, neuveriteľne to zrýchli prácu.
 
 Ak sa vám páči mať vo veciach systém a poriadok, tak dobrý nápad je priebežne prácu commitovať do repozitára na \href{https://github.com/}{GitHub}-e. Mimochodom, GitHub je veľmi užitočný pri programovaní -- hlavne ak s niekým spolupracujete (napríklad so školiteľom) alebo píšete komplexnejší program (v rámci záverečnej práce to tak často býva). Ak GitHub nepoužívate, odporúčam začať.
+
+\subsubsection{Kompilátor}
+Akýkoľvek editor si zvolíte, tak na kompilovanie odporúčam \textbf{kompilátor LuaLaTeX} alebo Xe(La)TeX. Výsledné PDF bude mať správne kódovanie slovenských znakov (v texte sa bude dať dobre vyhľadávať). Pre TeXstudio sa dá kompilátor nastaviť v priamo v tex súbore pomocou tzv \uv{magic commentu}, v preambule je to riadok \verb|% !TeX program = lualatex|, ktorý TeXstudiu hovorí, že tento dokument má kompilovať pomocou kompilátora LuaLaTeX. Dá sa samozrejme aj prenastaviť defaultný kompilátor pre všetky dokumenty: Options/Configure TeXstudio/Build/Default compiler/LuaLaTeX.
