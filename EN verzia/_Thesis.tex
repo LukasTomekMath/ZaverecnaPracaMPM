@@ -1,104 +1,17 @@
 \documentclass[a4paper]{book}
 
-% definovanie kompilatora (magic comment pre TeXstudio):
-% !TeX program = lualatex
+% definovanie kompilatora (magic comment):
+% !TeX program = xelatex
 
-% ============== PREAMBULA ============== (nacitanie balikov a podobne)
-% Ctrl+klik na balik zobrazi dokumentaciu k baliku (minimalne v TeXstudiu)
-
-%definovanie verzie dokumentu (pdf/tlacena)
-\usepackage{etoolbox}
-\newbool{printVersion} % premenna pre volbu verzie
-%\booltrue{printVersion} % tlacena: odkomentovat, pdf: nechat zakomentovanie
-
-% geometria a formatovanie stran
-\pagestyle{plain} % defaultny styl stran (plain/headings/empty/myheadings)
-\ifbool{printVersion}{
-	\usepackage[top=2.5cm, bottom=2.5cm, left=3.5cm, right=2cm]{geometry} % odporucane okraje
-}{
-	\usepackage[top=2.5cm, bottom=2.5cm, left=2.25cm, right=2.25cm]{geometry} % okraje vhodnejsie do pdf (rovnaka sirka vlavo/vpravo) 
-}
-
-
-% jazyk a kodovanie
-\usepackage[utf8]{inputenc} % input encoding
-\usepackage[main=english,slovak]{babel}  % primarny jazyk: EN, dalsie jazyky: SK
-\usepackage{csquotes} % uvodzovky
-
-
-% bibliografia
-\usepackage{expl3}
-\usepackage[style=iso-numeric,backend=bibtex,giveninits=true,sorting=nyt]{biblatex}
-\addbibresource{references.bib}
-
-
-% fromatovanie
-\usepackage{indentfirst} % odsadenie prveho odstavca
-\usepackage{enumitem} % číslovanie ((a),(b),(c),... i), ii), iii),...)
-\usepackage[small]{caption} % male popisy obrazkov
-
-
-% grafika
-\usepackage{graphicx} % obrazky
-\usepackage{subcaption} % podobrazky (subfigure)
-\graphicspath{ {./figures/} } % priecinok s obrazkami
-\usepackage{wrapfig} % obrazky obtekane textom
-\usepackage[dvipsnames]{xcolor} % farby (dvipsnames pridava dalsie farby)
-\usepackage{colortbl} % farebne tabulky
-\usepackage{multirow} % treba pre merge-ovanie budniek v tabulkach
-
-\usepackage{pdfpages} % vlozenie stran z ineho pdf (musi byt za graphics)
-
-
-% matematika
-\usepackage{mathtools} % rozsirenie zakadneho matematickeho balika amsmath
-\usepackage{amssymb} % dalsie symboly a fonty (napriklad pre mnozinu realnych cisel)
-\usepackage{siunitx} % jednotky SI
-
-% Definície, Vety, Dôkazy...
-\usepackage{amsthm}
-\theoremstyle{definition}
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{defn}[thm]{Definition}
-\newtheorem{lem}[thm]{Lemma}
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{rem}[thm]{Remark}
-\newtheorem{exmp}[thm]{Example}
-
-
-% pseudokod a kod
-\usepackage{algorithm2e} % pseudokody/algoritmy
-\usepackage{listings} % vkladanie kodu
-
-
-% hyperreferencia
-\ifbool{printVersion}{
-	% hyperreferencia v tlacenej verzii
-	\usepackage[hidelinks]{hyperref} % hyperreferencia
-}{
-	% hyperreferencia v pdf verzii
-	\usepackage{hyperref} % hyperreferencia
-	\hypersetup{colorlinks, % farby linkov
-		citecolor = red,
-		linkcolor = blue,
-		urlcolor = blue}
-}
-
-
-%% Ked uz je praca dlha, pre urychlenie kompilacie sa oplati vkladat len niektore casti/kapitoly
-%\includeonly{
-%%	Uvod,
-%%	Kapitola1,
-%%	Kapitola2,
-%	Kapitola3,
-%	Zaver
-%}
+% ============== PREAMBULA ==============
+% (nacitanie balikov a podobne)
+\include{preamble}
 
 % ============== DOKUMENT ==============
 \begin{document}
 	% ====== Uvodne casti ======
 	\pagestyle{empty}
-	\include{Cover} % Do tlacenej verzie v kniznej vazbe sa obalka neviaze, sluzi ako predloha pevnej obalky. Do tepelnej vazby sa viaze.
+	\include{Cover}
 	\setcounter{page}{1}
 	\include{Title_page}
 	\includepdf[pages=-,pagecommand={}]{documents/zadanie_AIS.pdf} % stiahnete z AIS
@@ -110,11 +23,9 @@
 	\include{Acknowledgement}
 	\pagestyle{plain}
 	\include{Abstract}
-	\pagestyle{plain}
 	\include{Preface}
 	\tableofcontents
 	
-	%\cleardoublepage
 %	\include{Zoznam_priloh}
 %	\include{Zoznam_skratiek}
 

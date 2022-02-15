@@ -6,4 +6,13 @@ Existuje niekoľko populárnych LaTeX editorov: TeXstudio, TeXmaker, TeXnicCente
 Ak sa vám páči mať vo veciach systém a poriadok, tak dobrý nápad je priebežne prácu commitovať do repozitára na \href{https://github.com/}{GitHub}-e. Mimochodom, GitHub je veľmi užitočný pri programovaní -- hlavne ak s niekým spolupracujete (napríklad so školiteľom) alebo píšete komplexnejší program (v rámci záverečnej práce to tak často býva). Ak GitHub nepoužívate, odporúčam začať.
 
 \subsubsection{Kompilátor}
-Akýkoľvek editor si zvolíte, tak na kompilovanie odporúčam \textbf{kompilátor LuaLaTeX} alebo Xe(La)TeX. Výsledné PDF bude mať správne kódovanie slovenských znakov (v texte sa bude dať dobre vyhľadávať). Pre TeXstudio sa dá kompilátor nastaviť v priamo v tex súbore pomocou tzv \uv{magic commentu}, v preambule je to riadok \verb|% !TeX program = lualatex|, ktorý TeXstudiu hovorí, že tento dokument má kompilovať pomocou kompilátora LuaLaTeX. Dá sa samozrejme aj prenastaviť defaultný kompilátor pre všetky dokumenty: Options/Configure TeXstudio/Build/Default compiler/LuaLaTeX.
+Akýkoľvek editor si zvolíte, tak na kompilovanie odporúčam \textbf{kompilátor XeLaTeX}. Výsledné PDF bude mať správne kódovanie slovenských znakov\footnote{Vďaka tomu, že XeLaTeX používa Unicode.} (v texte sa bude dať dobre vyhľadávať). Pre väčšinu editorov (aj TeXstudio) sa dá kompilátor nastaviť aj priamo v tex súbore pomocou tzv \uv{magic commentu}, v súbore \verb|_Zaverecna_praca.tex| je to riadok \verb|% !TeX program = xelatex|, ktorý editoru hovorí, že tento dokument má kompilovať pomocou kompilátora XeLaTeX. Dá sa samozrejme aj prenastaviť defaultný kompilátor pre všetky dokumenty: Options/Configure TeXstudio/Build/Default compiler/XeLaTeX.
+
+Ak ale chcete kompilovať pomocou \textbf{kompilátora PdfLaTeX}, treba správne kódovanie v PDF zabezpečiť pomocou pridania balíkov do preambuly. Funguje napríklad táto kombinácia (ale sú aj iné možnosti):
+\begin{verbatim}
+	\usepackage[utf8]{inputenc} % input encoding
+	\usepackage[T1]{fontenc} % sprave makcene
+	\usepackage{lmodern} % Latin modern fonts
+\end{verbatim}
+V súbore \verb|_Zaverecna_praca.tex| treba ešte vymazať magic comment \verb|% !TeX program = xelatex| (ak defaultne používate PdfLaTeX) resp. ho prepísať na \verb|% !TeX program = pdflatex|.
+

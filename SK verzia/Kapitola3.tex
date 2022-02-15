@@ -1,4 +1,4 @@
-\chapter{Základné tipy na písanie v \LaTeX-u} \label{sec:tipy}
+\chapter{Tipy na písanie v \LaTeX-u} \label{sec:tipy}
 
 Úlohou tejto kapitoly nie je byť príručkou k LaTeX-u. Na internete ich nájdete kopec, výborná je napríklad \href{https://www.overleaf.com/learn}{táto príručka na stránke Overleaf-u} alebo \href{https://en.wikibooks.org/wiki/LaTeX}{táto na wikibooks}. Pri písaní určite pomôžu aj rôzne fóra, napríklad \href{https://tex.stackexchange.com/}{https://tex.stackexchange.com/}. Uvádzam len niekoľko základných tipov pre písanie matematickej záverečnej práce v LaTeX-u. Keď budete pri písaní niečo potrebovať, môžete sa inšpirovať, resp. si to odtiaľto skopírovať a upraviť.
 
@@ -213,6 +213,8 @@ Použitie vyzerá takto:
 		(u,w)_A=(f,w).
 	\end{equation*}
 \end{defn}
+
+
 \begin{thm}[Vlastnosť ortogonality]
 	Chyba  $\varepsilon=U-u$ je v zmysle energetického skalárneho súčinu kolmá (ortogonálna) na všetky funkcie $w\in S \subset V$, teda
 	\begin{equation}\label{eq:Ortogonalita}
@@ -230,7 +232,6 @@ Použitie vyzerá takto:
 	\end{equation}
 	Keď rovnice~\eqref{eq:RG2} a~\eqref{eq:SlabeRies2} od seba odčítame, dostaneme vlastnosť ortogonality~\eqref{eq:Ortogonalita}.
 \end{proof}
-
 
 \section{Referencie a citácie}
 Na orientáciu v práci slúžia referencie. Môžu odkazovať na všeličo, len to musí byť označené pomocou \verb|\label{name}|. Reťazec \verb|name| by mal byť výstižný (nie len nejaké číslo), v zdrojovom kóde je to potom prehľadnejšie a lepšie sa s labelami pracuje. Je vhodné si v labelovaní zaviesť nejakú konvenciu. Štandardne sa používa pre obrázky \verb|\label{fig:name}|, pre rovnice \verb|\label{eq:name}|, pre časti a kapitoly \verb|\label{sec:name}| a podobne. Takáto konvencia je výhodná napríklad aj keď máte sekciu, obrázok a rovnicu, ktoré hovoria o jednej veci, tak to ľahko odlíšite. Reťazec \verb|name| môže obsahovať aj medzery, ale používajte radšej podčiarkovník. Uvediem niekoľko príkladov referencií.
@@ -257,7 +258,6 @@ Na položky z bibliografickej databázy potom v texte odkazujete. Môžete citov
 	\caption{Google scholar.}
 	\label{fig:google_scholar}
 \end{figure} 
-
 
 \section{Obrázky}
 Obrázky sú veľmi dôležitý prvok záverečnej práce. Keď sú dobre urobené, môžu čitateľovi veľmi pomôcť prácu pochopiť. Je veľa možností, ako obrázky vkladať do TeX-u a ešte viac možností, ako ich vytvárať. Obrázky, ktoré chcete vložiť do práce je dobré mať pokope v priečinku/pričinkoch. V preambule je cesta k priečinku nastavená pomocou príkazu \verb|\graphicspath{ {./figures/} }|.
