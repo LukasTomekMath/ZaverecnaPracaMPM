@@ -213,6 +213,8 @@ Použitie vyzerá takto:
 		(u,w)_A=(f,w).
 	\end{equation*}
 \end{defn}
+
+
 \begin{thm}[Vlastnosť ortogonality]
 	Chyba  $\varepsilon=U-u$ je v zmysle energetického skalárneho súčinu kolmá (ortogonálna) na všetky funkcie $w\in S \subset V$, teda
 	\begin{equation}\label{eq:Ortogonalita}
@@ -230,7 +232,6 @@ Použitie vyzerá takto:
 	\end{equation}
 	Keď rovnice~\eqref{eq:RG2} a~\eqref{eq:SlabeRies2} od seba odčítame, dostaneme vlastnosť ortogonality~\eqref{eq:Ortogonalita}.
 \end{proof}
-
 
 \section{Referencie a citácie}
 Na orientáciu v práci slúžia referencie. Môžu odkazovať na všeličo, len to musí byť označené pomocou \verb|\label{name}|. Reťazec \verb|name| by mal byť výstižný (nie len nejaké číslo), v zdrojovom kóde je to potom prehľadnejšie a lepšie sa s labelami pracuje. Je vhodné si v labelovaní zaviesť nejakú konvenciu. Štandardne sa používa pre obrázky \verb|\label{fig:name}|, pre rovnice \verb|\label{eq:name}|, pre časti a kapitoly \verb|\label{sec:name}| a podobne. Takáto konvencia je výhodná napríklad aj keď máte sekciu, obrázok a rovnicu, ktoré hovoria o jednej veci, tak to ľahko odlíšite. Reťazec \verb|name| môže obsahovať aj medzery, ale používajte radšej podčiarkovník. Uvediem niekoľko príkladov referencií.
@@ -258,7 +259,6 @@ Na položky z bibliografickej databázy potom v texte odkazujete. Môžete citov
 	\label{fig:google_scholar}
 \end{figure} 
 
-
 \section{Obrázky}
 Obrázky sú veľmi dôležitý prvok záverečnej práce. Keď sú dobre urobené, môžu čitateľovi veľmi pomôcť prácu pochopiť. Je veľa možností, ako obrázky vkladať do TeX-u a ešte viac možností, ako ich vytvárať. Obrázky, ktoré chcete vložiť do práce je dobré mať pokope v priečinku/pričinkoch. V preambule je cesta k priečinku nastavená pomocou príkazu \verb|\graphicspath{ {./figures/} }|.
 
@@ -281,16 +281,16 @@ Takýto obrázok ale nie je vycentrovaný a nemá popis. V práci by mali mať v
 	%\vspace{-5pt}
 \end{figure}
 
+V TeXstudiu sa takto formátované obrázky dajú do kódu vkladať veľmi jednoducho pomocou \verb|Ctrl+C| -- \verb|Ctrl+V|, resp. drag and drop. Funguje to aj so screenshotmi,\footnote{Mimochodom, poznáte klávesovú skratku Windows+Shift+S? Nie? Tak skúste, odpadnete z nej :-).} po vložení do TeXstudia sa zobrazí okno, v ktorom screenshot uložíte do priečinka s obrázkami.
+
+Obrázky~\ref{fig:bod_v_rovine},~\ref{fig:parabola} obtekané textom sa vkladajú pomocou balíka \verb|wrapfig|.
+
 \begin{wrapfigure}{r}{0.2\textwidth}
 	\centering
 	\includegraphics[width=0.2\textwidth]{bod_v_rovine}
 	\caption{Inkscape.}
 	\label{fig:bod_v_rovine}
 \end{wrapfigure}
-V TeXstudiu sa takto formátované obrázky dajú do kódu vkladať veľmi jednoducho pomocou \verb|Ctrl+C| -- \verb|Ctrl+V|, resp. drag and drop. Funguje to aj so screenshotmi,\footnote{Mimochodom, poznáte klávesovú skratku Windows+Shift+S? Nie? Tak skúste, odpadnete z nej :-).} po vložení do TeXstudia sa zobrazí okno, v ktorom screenshot uložíte do priečinka s obrázkami.
-
-Obrázky~\ref{fig:bod_v_rovine},~\ref{fig:parabola} obtekané textom sa vkladajú pomocou balíka \verb|wrapfig|.
-
 \textit{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis metus metus. Nam eget sapien elementum, pharetra arcu ut, congue tortor. Nulla non tortor ullamcorper, pretium turpis ac, accumsan erat. Vestibulum porttitor leo in arcu laoreet, vitae ullamcorper massa blandit. Vestibulum fermentum euismod dui, vel blandit dolor. Maecenas aliquam pharetra nunc, quis mollis turpis sodales non. Nunc non odio condimentum, sollicitudin diam sit amet, vestibulum libero. Ut sed euismod leo. Cras pharetra dolor metus, vitae auctor ligula porttitor ut. Vestibulum eu risus non velit egestas pulvinar. Nam feugiat sed libero eget consequat. Proin ligula turpis, facilisis et nisi in, vehicula fringilla libero. Nulla sagittis velit odio, in faucibus est vulputate non.}
 
 \begin{wrapfigure}{l}{0.25\textwidth}
@@ -301,55 +301,18 @@ Obrázky~\ref{fig:bod_v_rovine},~\ref{fig:parabola} obtekané textom sa vkladaj�
 \end{wrapfigure}
 \textit{Suspendisse tempor dictum mollis. Quisque ac ante arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque tincidunt consequat faucibus. Nullam vel iaculis nisl. Quisque viverra sed dui fermentum congue. Nullam venenatis, mi eget pulvinar condimentum, quam massa euismod lacus, quis pulvinar neque lacus vestibulum arcu. Maecenas porta lobortis nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque id semper lorem, nec aliquet odio. Nulla ornare consectetur odio ullamcorper auctor. Sed lobortis nisl vitae mauris porttitor facilisis. Nullam neque quam, finibus at tortor et, maximus ultrices magna. Duis ultricies malesuada lacus, ut gravida ante tempus eu.}
 
-\textit{Vestibulum tortor diam, lacinia porttitor tincidunt nec, suscipit ac mi. Sed in nunc a tellus egestas porta. Vivamus at metus condimentum, laoreet nisl vel, fringilla ante. Nunc quis libero a felis tempus imperdiet sit amet sed mauris. Sed justo sem, laoreet eu accumsan a, tincidunt sit amet felis. Duis at pharetra libero. Sed et ligula urna. Integer pulvinar pellentesque velit, sit amet vulputate tortor. Curabitur ultrices rutrum enim et suscipit. Nam dictum vestibulum odio eu malesuada.}
+\textit{Vestibulum tortor diam, lacinia porttitor tincidunt nec, suscipit ac mi. Sed in nunc a tellus egestas porta. Vivamus at metus condimentum, laoreet nisl vel, fringilla ante. Nunc quis libero a felis tempus imperdiet sit amet sed mauris. Sed justo sem, laoreet eu accumsan a, tincidunt sit amet felis.}
 
 
 \subsubsection{Viac obrázkov}
 
-Príklad dvoch obrázkov vložených vedľa seba vidíme na Obrázku~\ref{fig:hyperbolicky_paraboloid}. Analogicky sa dajú urobiť aj 3 obrázky vedľa seba, prípadne mriežka obrázkov (napr. 4x2, ako vidíme na Obrázku~\ref{fig:bumpy_sphere}). Niekedy, keď je v práci veľmi veľa obrázkov, môže byť vhodné vytvoriť strany, na ktorých sú len obrázky, príkladom je Obrázok~\ref{fig:bumpy_sphere}.
-\begin{figure}[h!]
+Príklad dvoch obrázkov vložených vedľa seba vidíme na Obrázku~\ref{fig:hyperbolicky_paraboloid}. Analogicky sa dajú urobiť aj 3 obrázky vedľa seba, prípadne mriežka obrázkov (napr. 4x2, ako vidíme na Obrázku~\ref{fig:bumpy_sphere}). Niekedy, keď je v práci veľmi veľa obrázkov, môže byť vhodné vytvoriť strany, na ktorých sú len obrázky, príkladom je Obrázok~\ref{fig:bumpy_sphere}. Ak ale chceme, aby každý obrázok mal svoje číslo a popis, môžeme to urobiť napríklad tak, ako vidíme na príklade Obrázkov~\ref{fig:vzduchovod_geom}~a~\ref{fig:vzduchovod_mesh}.
+\begin{figure}[!h]
 	\centering
 	\includegraphics[height=5cm]{fig_hyperbolicky_paraboloid}
 	\quad
 	\includegraphics[height=5cm]{st_chas_framing}
 	\caption{Graf funkcie $f(x,y)=xy$ a konštruovanie strechy v tvare hyperbolického paraboloidu (v menšom okolí sedlového bodu, než vykresľujeme v grafe).} \label{fig:hyperbolicky_paraboloid}
-\end{figure}
-Ak ale chceme, aby každý obrázok mal svoje číslo a popis, môžeme to urobiť napríklad tak, ako vidíme na príklade Obrázkov~\ref{fig:vzduchovod_geom}~a~\ref{fig:vzduchovod_mesh}.
-\begin{figure}[!h]
-	\centering
-	\vspace{-5pt}
-	\begin{minipage}{.5\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{vzduchovod1}
-		\vspace{-5pt}
-		\caption{Obrázok z ANSYS-u.}
-		\label{fig:vzduchovod_geom}
-	\end{minipage}%
-	\begin{minipage}{.5\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{vzduchovod2}
-		\vspace{-5pt}
-		\caption{Obrázok z ANSYS-u.}
-		\label{fig:vzduchovod_mesh}
-	\end{minipage}
-	\vspace{-5pt}
-\end{figure}
-
-Pomocou balíka \verb|subcaption| sa dajú podobne vložiť vedľa seba tak, ako vidíme na Obrázku~\ref{fig:matlab}, pričom môžu mať jeden hlavný popis a ďalšie podpopisy \ref{fig:matlab_2D}~resp.~\ref{fig:matlab_3D}.
-\begin{figure}[h!]
-	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{matlab_2D}
-		\caption{Graf funkcie jednej premennej (2D).}
-		\label{fig:matlab_2D}
-	\end{subfigure}
-	\qquad
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{matlab_3D}
-		\caption{Graf funkcie v dvoch premenných (3D).}
-		\label{fig:matlab_3D}
-	\end{subfigure}
-	\caption{Príklady obrázkov z MATLAB-u.}\label{fig:matlab}
 \end{figure}
 
 \begin{figure}[p]
@@ -375,6 +338,44 @@ Pomocou balíka \verb|subcaption| sa dajú podobne vložiť vedľa seba tak, ako
 	\caption{Príklady obrázkov z ParaView.}\label{fig:bumpy_sphere} 
 	%\vspace{-10pt}
 \end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\vspace{-5pt}
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{vzduchovod1}
+		\vspace{-5pt}
+		\caption{Obrázok z ANSYS-u.}
+		\label{fig:vzduchovod_geom}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{vzduchovod2}
+		\vspace{-5pt}
+		\caption{Obrázok z ANSYS-u.}
+		\label{fig:vzduchovod_mesh}
+	\end{minipage}
+	\vspace{-5pt}
+\end{figure}
+
+Pomocou balíka \verb|subcaption| sa dajú obrázky vložiť vedľa seba tak, ako vidíme na Obrázku~\ref{fig:matlab}, pričom môžu mať jeden hlavný popis a ďalšie podpopisy \ref{fig:matlab_2D}~resp.~\ref{fig:matlab_3D}.
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{matlab_2D}
+		\caption{Graf funkcie jednej premennej (2D).}
+		\label{fig:matlab_2D}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{matlab_3D}
+		\caption{Graf funkcie v dvoch premenných (3D).}
+		\label{fig:matlab_3D}
+	\end{subfigure}
+	\caption{Príklady obrázkov z MATLAB-u.}\label{fig:matlab}
+\end{figure}
+
 
 \subsection{Vytváranie obrázkov}
 
@@ -433,7 +434,7 @@ Ak do obrázka potrebujete doplniť popisky alebo vzorce, ktoré nedokážete do
 	\includegraphics[width=0.8\textwidth]{fig_rezy}
 	%\vspace{-10pt}
 	\caption{Mathematica + dorobenie v Inkscape.} \label{fig:rezy}
-	%\vspace{-5pt}
+%	\vspace{-10pt}
 \end{figure}
 
 
@@ -474,8 +475,8 @@ Jednoduchá tabuľka bez popisu sa robí takto:
 
 \begin{tabular}{|r|r|r|}
 	\hline
-	 2 &   4 & 4.5 \\ \hline
-	 3 &   1 &   5 \\
+	2 &   4 & 4.5 \\ \hline
+	3 &   1 &   5 \\
 	18 & 4.5 &   5 \\ \hline
 \end{tabular}
 
@@ -486,10 +487,10 @@ Tabuľky v záverečnej práci by ale mali mať popis, tu je príklad s popisom:
 	\begin{tabular}{rlrrr}
 		\hline
 		$n_V$ & $\tau$     & $N$ & $ L^2\mbox{ error}$ &  EOC \\ \hline
-		  122 & 0.04       &   2 &            1.43e-02 &      \\
-		  482 & 0.01       &   8 &            3.35e-03 & 2.10 \\
-		 1922 & 0.0025     &  32 &            8.07e-04 & 2.05 \\
-		 7682 & 0.000625   & 128 &            1.95e-04 & 2.05 \\
+		122 & 0.04       &   2 &            1.43e-02 &      \\
+		482 & 0.01       &   8 &            3.35e-03 & 2.10 \\
+		1922 & 0.0025     &  32 &            8.07e-04 & 2.05 \\
+		7682 & 0.000625   & 128 &            1.95e-04 & 2.05 \\
 		30722 & 0.00015625 & 512 &            4.64e-05 & 2.07 \\ \hline
 	\end{tabular}
 	\label{tab:resultsDDFV}
@@ -508,7 +509,6 @@ Ešte jeden príklad s použitím farby a definovaním šírky stĺpcov je v Tab
 		$\rho(x)$ & $\si{kg/m^3}$ & Hustota &  \\ \hline
 		$f(x,t)$ & $\si{J/m^3}$s & Intenzita (hustota) \newline zdrojov tepla & Množstvo tepla (J) vyprodukované v~$\SI{1}{m^3}$ za 1 s   \\ \hline
 		$q(x,t)$ & $\si{J/m^2.s}$ & Hustota tepelného toku & Množstvo tepla, ktoré prejde prierezom $\SI{1}{m^2}$ za 1 s  \\ \hline
-		$\lambda(x)$ & $\si{W/m.K}$ & Koeficient (súčiniteľ)\newline tepelnej vodivosti & Množstvo tepla, ktoré prejde za 1 s medzi protiľahlými stenami jednotkovej kocky, keď sa ich teploty líšia o 1 K a ostatné steny sú izolované. \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -520,7 +520,7 @@ Vytvárať tabuľku priamo v zdrojovom kóde v LaTeX editore môže byť pri vä
 V záverečných prácach na MPM je niekedy vhodné vysvetliť váš algoritmus alebo kód. Na písanie pseudokódov existuje veľa balíkov, prehľad nájdete \href{https://www.overleaf.com/learn/latex/Algorithms}{na stránke Overleaf-u} alebo \href{https://en.wikibooks.org/wiki/LaTeX/Algorithms#The_algorithm_environment}{na wikibooks}. Algoritmus~\ref{alg:algorithm2e_exmp} je príkladom použitia balíka \verb|algorithm2e|.
 
 \RestyleAlgo{ruled}
-\begin{algorithm}[h!]
+\begin{algorithm}[!h]
 	\caption{An algorithm with caption}\label{alg:algorithm2e_exmp}
 	\KwData{$n \geq 0$}
 	\KwResult{$y = x^n$}
