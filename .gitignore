@@ -5,7 +5,6 @@
 *.bbl
 *.xml
 *.toc
-SK verzia/_Zaverecna_praca-blx.bib
-SK verzia/_Zaverecna_praca.synctex.gz
 *.gz
-EN verzia/_Thesis-blx.bib
+SK_verzia/_Zaverecna_praca-blx.bib
+EN_verzia/_Thesis-blx.bib
