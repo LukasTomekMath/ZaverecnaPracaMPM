@@ -1,0 +1,27 @@
+\documentclass{standalone}
+%\usepackage[slovak]{babel}
+\usepackage{tikz}
+%\usepackage{graphicx}
+%
+%\usepackage{eso-pic}
+%\renewcommand{\rmdefault}{phv} % Arial
+%\renewcommand{\sfdefault}{phv} % Arial
+
+\begin{document}
+
+\begin{tikzpicture}
+	
+	%\sffamily
+	
+	\fill [black!20] (0,0) rectangle (70,4);
+	
+	\node[anchor=south west,inner sep=0] at (0.35,0.35) {\includegraphics[width=30mm]{foto.jpg}}; % fotku mozte pripadne zakomentovat
+	\fontsize{6mm}{6mm}\selectfont
+	\draw[anchor=west] (4,2.5) node{Školiteľ: Ing. Mgr. Lukáš Tomek, PhD.};
+	\draw[anchor=west] (4,1.2) node{Študent: Meno Priezvisko (a tituly)};
+	\draw[anchor=west] (28,2.5) node{Akademický rok: 2023/2024};
+	\draw[anchor=west] (28,1.2) node{Študijný program: Matematicko-počítačové modelovanie};
+	\draw[anchor=east] (69,2.5) node{BAKALÁRSKA/DIPLOMOVÁ PRÁCA};
+	\draw[anchor=east] (69,1.2) node{Názov práce};
+\end{tikzpicture}
+\end{document} 

@@ -1,0 +1,58 @@
+% ============== PREAMBULA ==============
+% (nacitanie balikov a podobne)
+% Ctrl+klik na balik zobrazi dokumentaciu k baliku (v TeXstudiu)
+% Je tu vela uzitocnych balikov ak ale nejaky nepotrebujete, zakomentujte ho
+
+
+% geometria a formatovanie
+\usepackage[left=2cm,right=2cm,top=0cm,bottom=0cm, paperwidth=700mm, paperheight=1000mm]{geometry}
+%\usepackage{a0poster}
+\usepackage{multicol}
+ 
+\columnseprule=2pt % Hrubka oddelovaca medzi stlpcami
+\columnsep=100pt % Medzera medzi oddelovacmi stlpcov a textom
+
+
+% jazyk
+\usepackage[main=english,slovak]{babel}  % primarny jazyk: EN, dalsie jazyky: SK
+
+
+% bibliografia
+\usepackage[style=iso-numeric,backend=bibtex,giveninits=true,sorting=nyt]{biblatex}
+\addbibresource{literatura.bib}
+
+
+% fromatovanie
+\usepackage{indentfirst} % odsadenie prveho odstavca
+\usepackage{enumitem} % číslovanie ((a),(b),(c),... i), ii), iii),...)
+\usepackage[small]{caption} % popisy obrazkov
+
+
+% grafika
+\usepackage{graphicx} % obrazky
+%\usepackage{tikz}
+\usepackage{subcaption} % podobrazky (subfigure)
+\graphicspath{ {./figures/} } % priecinok s obrazkami
+\usepackage{wrapfig} % obrazky obtekane textom
+\usepackage{xcolor} % farby
+\usepackage{colortbl} % farebne tabulky
+\usepackage{multirow} % treba pre merge-ovanie budniek v tabulkach
+
+% matematika
+\usepackage{mathtools} % rozsirenie zakladneho matematickeho balika amsmath
+\usepackage{amssymb} % dalsie symboly a fonty (napriklad pre mnozinu realnych cisel)
+\usepackage[locale=DE]{siunitx} % jednotky SI
+
+% Definície, Vety, Dôkazy...
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{thm}{Veta}[section]
+\newtheorem{defn}[thm]{Definícia}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Dôsledok}
+\newtheorem{rem}[thm]{Poznámka}
+\newtheorem{exmp}[thm]{Príklad}
+
+
+% hyperreferencia
+\usepackage[hidelinks]{hyperref} % hyperreferencia

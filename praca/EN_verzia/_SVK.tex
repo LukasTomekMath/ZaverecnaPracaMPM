@@ -1,0 +1,33 @@
+\documentclass[a4paper,11pt]{book}
+
+% definovanie kompilatora (magic comment):
+% !TeX program = xelatex
+
+% ============== PREAMBULA ==============
+% (nacitanie balikov a podobne)
+\input{preamble}
+
+% ============== DOKUMENT ==============
+\begin{document}
+	% ====== Uvodne casti ======
+	\pagestyle{empty}
+	\include{Title_page_SVK}
+	\tableofcontents
+	\pagestyle{plain}
+	\include{Abstract}
+
+%	\include{Zoznam_priloh}
+
+	% ====== Jadro prace ======
+	\include{Introduction}
+	\include{Chapter1}
+	\include{Chapter2}
+	\include{Chapter3}
+	\include{Conclusions}
+
+	% ====== Bibliografia a prilohy ======
+%	\nocite{*} % Vypise v bibliografii aj zroje, ktore neboli citovane
+	\printbibliography[heading=bibintoc]
+	
+	%\includepdf[pages=-,pagecommand={}]{documents/priloha1.pdf} % pripadne prilohy
+\end{document}

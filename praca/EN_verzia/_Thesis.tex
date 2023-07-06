@@ -1,0 +1,45 @@
+\documentclass[a4paper,11pt]{book}
+
+% definovanie kompilatora (magic comment):
+% !TeX program = xelatex
+
+% ============== PREAMBULA ==============
+% (nacitanie balikov a podobne)
+\input{preamble}
+
+% ============== DOKUMENT ==============
+\begin{document}
+	% ====== Uvodne casti ======
+	\pagestyle{empty}
+	\include{Cover}
+	\setcounter{page}{1}
+	\include{Title_page}
+	\includepdf[pages=-,pagecommand={}]{documents/zadanie_AIS.pdf} % stiahnete z AIS
+	% Pre vlozenie pokynov na vypracovanie, odkomentujte nasledujuce 3 riadky
+%	\ifbool{printVersion}{\cleardoublepage}
+%	
+%	\includepdf[pages=-,pagecommand={}]{documents/Pokyny_BP_2015.pdf}
+	\include{Declaration}
+	\include{Acknowledgement}
+	\pagestyle{plain}
+	\include{Abstract}
+	\include{Preface}
+	\tableofcontents
+	
+%	\include{Zoznam_priloh}
+%	\include{Zoznam_skratiek}
+
+	% ====== Jadro prace ======
+	\include{Introduction}
+	\include{Chapter1}
+	\include{Chapter2}
+	\include{Chapter3}
+	\include{Conclusions}
+	\include{Resume}
+
+	% ====== Bibliografia a prilohy ======
+%	\nocite{*} % Vypise v bibliografii aj zroje, ktore neboli citovane
+	\printbibliography[heading=bibintoc]
+	
+	%\includepdf[pages=-,pagecommand={}]{documents/priloha1.pdf} % pripadne prilohy
+\end{document}

@@ -1,0 +1,89 @@
+% ============== PREAMBULA ==============
+% (nacitanie balikov a podobne)
+% Ctrl+klik na balik zobrazi dokumentaciu k baliku (v TeXstudiu)
+% Je tu vela uzitocnych balikov ak ale nejaky nepotrebujete, zakomentujte ho
+
+%definovanie verzie dokumentu (pdf/tlacena)
+\usepackage{etoolbox}
+\newbool{printVersion} % premenna pre volbu verzie
+%\booltrue{printVersion} % tlacena: odkomentovat, pdf: nechat zakomentovanie
+
+
+% geometria a formatovanie stran
+\pagestyle{plain} % defaultny styl stran (plain/headings/empty/myheadings)
+\ifbool{printVersion}{
+	\usepackage[top=2.5cm, bottom=2.5cm, left=3.5cm, right=2cm]{geometry} % odporucane okraje
+}{
+	\usepackage[top=2.5cm, bottom=2.5cm, left=2.75cm, right=2.75cm]{geometry} % okraje vhodnejsie do pdf (rovnaka sirka vlavo/vpravo) 
+}
+
+% jazyk
+\usepackage[main=slovak,english]{babel}  % primarny jazyk: SK, dalsie jazyky: EN
+
+
+% bibliografia
+\usepackage[style=iso-numeric,backend=bibtex,giveninits=true,sorting=nyt]{biblatex}
+\addbibresource{literatura.bib}
+
+
+% fromatovanie
+\usepackage{indentfirst} % odsadenie prveho odstavca
+\usepackage{enumitem} % číslovanie ((a),(b),(c),... i), ii), iii),...)
+\usepackage[small]{caption} % male popisy obrazkov
+
+
+% grafika
+\usepackage{graphicx} % obrazky
+\usepackage{subcaption} % podobrazky (subfigure)
+\graphicspath{ {./figures/} } % priecinok s obrazkami
+\usepackage{wrapfig} % obrazky obtekane textom
+\usepackage[dvipsnames]{xcolor} % farby (dvipsnames pridava dalsie farby)
+\usepackage{colortbl} % farebne tabulky
+\usepackage{multirow} % treba pre merge-ovanie budniek v tabulkach
+
+\usepackage{pdfpages} % vlozenie stran z ineho pdf (musi byt za graphics)
+
+
+% matematika
+\usepackage{mathtools} % rozsirenie zakladneho matematickeho balika amsmath
+\usepackage{amssymb} % dalsie symboly a fonty (napriklad pre mnozinu realnych cisel)
+\usepackage[locale=DE]{siunitx} % jednotky SI
+
+% Definície, Vety, Dôkazy...
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{thm}{Veta}[chapter]
+\newtheorem{defn}[thm]{Definícia}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Dôsledok}
+\newtheorem{rem}[thm]{Poznámka}
+\newtheorem{exmp}[thm]{Príklad}
+
+
+% pseudokod a kod
+\usepackage[czech]{algorithm2e} % pseudokody/algoritmy
+\usepackage{listings} % vkladanie kodu
+
+
+% hyperreferencia
+\ifbool{printVersion}{
+	% hyperreferencia v tlacenej verzii
+	\usepackage[hidelinks]{hyperref} % hyperreferencia
+}{
+	% hyperreferencia v pdf verzii
+	\usepackage{hyperref} % hyperreferencia
+	\hypersetup{colorlinks, % farby linkov
+		citecolor = red,
+		linkcolor = blue,
+		urlcolor = blue}
+}
+
+
+% Ked uz je praca dlha, pre urychlenie kompilacie sa oplati vkladat len niektore kapitoly
+%\includeonly{
+	%%	Uvod,
+	%%	Kapitola1,
+	%%	Kapitola2,
+	%	Kapitola3,
+	%%	Zaver
+	%}
