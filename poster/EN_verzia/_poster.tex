@@ -23,10 +23,8 @@
 	\leaders\vrule width \linewidth\vskip 3pt
 
 	% ====== JADRO ======
-	
 	\begin{multicols}{3} % cislom sa nastavuje pocet stplcov
-%	\include{Uvod}
-
+	
 	\section*{Na čo je dobrý poster}
 	
 	Pri odovzdávaní práce do AIS sa odovzdáva aj poster. Môžete ho chápať ako vizuálnu \uv{upútavku} na vašu prácu. Postery bývajú niekedy vystavené na chodbách fakulty a prezentujú práce našich študentov. Niekoľko posterov študentov je aj na chodbách našej katedry. Využívame ich aj pri prezentácii MPM pre potenciálnych záujemcov o štúdium, napríklad na dni otvorených dverí SvF.
@@ -35,7 +33,7 @@
 	
 	Je dobré sa zamerať na estetické, jasné a čitateľné podanie vašej práce. Veľmi dôležité sú obrázky a kľúčové vzorce, text by mal byť v rámci možností stručný, ale jasný. Predstavte si, že prechádzate po chodbe plnej posterov. Ktorý poster vás zaujme? Väčšinu ľudí zrejme ten, čo má pekné a zaujímavé obrázky. Až keď sa priblížite, všimnete si vzorce a prípadne sa zahĺbite do čítania textu.
 	
-	Táto šablóna je graficky jednoduchá, vyniknúť by mal obsah, ktorý doplníte. Dá sa s tým vyhrať, môžete skúsiť zmeniť farbu pozadia, doplniť nejaké rámiky. Vyhnite sa ale príliš výraznému pozadiu a grafike, ktorá \uv{zabije} obsah. Poster sa dá urobiť aj v PowerPointe, avšak pre väčšinu študentov bude zrejme jednoduchšie sem iba z LaTeX-u nakopírovať časti práce a vhodne ich upraviť/zjednodušiť.
+	Táto šablóna je graficky jednoduchá, vyniknúť by mal obsah, ktorý doplníte. Dá sa s tým vyhrať, môžete skúsiť zmeniť farbu pozadia, doplniť nejaké rámiky. Množstvo inšpirácie nájdete na stránke \href{https://www.latextemplates.com/cat/conference-posters}{\textcolor{blue}{latextemplates.com}}, či na  \href{https://www.overleaf.com/gallery/tagged/poster}{\textcolor{blue}{stránke Overleaf-u}}, kde je aj veľa \href{https://www.overleaf.com/learn/latex/Posters}{\textcolor{blue}{tipov na tvorbu posteru}}. Vyhnite sa ale príliš výraznému pozadiu a grafike, ktorá \uv{zabije} obsah. Poster sa dá urobiť aj v PowerPointe, avšak pre väčšinu študentov bude zrejme jednoduchšie sem iba z LaTeX-u nakopírovať časti práce a vhodne ich upraviť/zjednodušiť.
 	
 	Niekoľko poznámok:
 	\begin{itemize}
@@ -49,7 +47,7 @@
 	\section*{Obrázky}
 	Obrázky sú veľmi dôležité, keďže sú v posteri hlavným prvkom, ktorý vizuálne prezentuje vašu prácu. Väčšinou sa používa podmnožina obrázkov z práce. Treba ich starostlivo zvoliť tak, aby boli dostatočne ilustratívne. Podobne ako pri práci, aj pri posteri je dobré mať obrázky, ktoré chcete vložiť do posteru, pokope v priečinku. V preambule je cesta k priečinku nastavená pomocou príkazu 
 	\verb|\graphicspath{ {./figures/} }|.
-
+	
 	\begin{center}
 		\includegraphics[width=\linewidth]{klavir2}
 		\captionof{figure}{Označenia tónov na klaviatúre.}
@@ -65,8 +63,7 @@
 		
 		\textit{Popisy obrázkov môžu byť aj nečíslované.}
 	\end{center}
-
-
+	
 	\begin{center}
 		\includegraphics[height=6cm]{fig_hyperbolicky_paraboloid}
 		\quad
@@ -75,8 +72,6 @@
 	\end{center}
 	
 	Príklad dvoch obrázkov vložených vedľa seba (s jedným popisom) vidíme na Obrázku~\ref{fig:hyperbolicky_paraboloid}. Analogicky sa dajú urobiť aj 3 obrázky vedľa seba, prípadne mriežka obrázkov (napr. 4x2, ako vidíme na Obrázku~\ref{fig:bumpy_sphere}). Ak ale chceme, aby každý obrázok mal svoje číslo a popis, môžeme to urobiť napríklad tak, ako vidíme na príklade Obrázkov~\ref{fig:vzduchovod_geom}~a~\ref{fig:vzduchovod_mesh}.
-	
-
 	
 	\begin{center}
 		%	\vspace{-5pt}
@@ -101,7 +96,7 @@
 		\captionof{figure}{Príklady obrázkov z ParaView.}\label{fig:bumpy_sphere} 
 		%\vspace{-10pt}
 	\end{center}
-
+	
 	\begin{center}
 		\vspace{-5pt}
 		\begin{minipage}{.5\linewidth}
@@ -123,8 +118,6 @@
 	
 	Dajú sa použiť aj obrázky obtekané textom (wrapfigure), ale z nejakých dôvodov je obtiažnejšie nastaviť rozmery obrázka tak, ako človek chce.
 	
-	
-
 	\begin{wrapfigure}{l}{0.3\linewidth}
 		\centering
 		\includegraphics[width=1.5\linewidth]{parabola}
@@ -133,7 +126,7 @@
 	\end{wrapfigure}
 	\textit{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis metus metus. Nam eget sapien elementum, pharetra arcu ut, congue tortor. Nulla non tortor ullamcorper, pretium turpis ac, accumsan erat. Vestibulum porttitor leo in arcu laoreet, vitae ullamcorper massa blandit. Vestibulum fermentum euismod dui, vel blandit dolor. Maecenas aliquam pharetra nunc, quis mollis turpis sodales non.}
 	
-
+	
 	\section*{Vzorce}
 	
 	V posteri je dobré uviesť kľúčové vzorce, ktoré používate v práci. Netreba zachádzať do úplných detailov (napríklad uvádzať celú numerickú schému), aby ste poster príliš nezahltili. Nižšie je niekoľko vzorcov (nie je nutné, aby boli číslované). Vzorec \eqref{eq:Gauss} je Gaussova veta
@@ -187,14 +180,11 @@
 	% ====== Bibliografia a prilohy ======
 	%	\nocite{*} % Vypise v bibliografii aj zroje, ktore neboli citovane
 	\printbibliography
-
-%	\vspace*{50mm} % ak vam nedarilo vvyuzit celu plochu postera, da sa pomoct tymto bielym miestom 
+	
+	%	\vspace*{50mm} % ak vam nedarilo vvyuzit celu plochu postera, da sa pomoct tymto bielym miestom 
 	\end{multicols}
-
 	\vfill
 
 	% ====== PATA POSTERA ======
 	\centerline{\includegraphics[width=\paperwidth]{footer/footer.pdf}}
-	
-
 \end{document}
