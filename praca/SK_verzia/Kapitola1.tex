@@ -25,17 +25,17 @@ Keď školiteľovi posielate novú verziu, je veľmi užitočné mu v nej vyzna�
 Keď už máte skript nainštalovaný, používa sa veľmi jednoducho a rýchlo (keď už sa to naučíte):
 \begin{enumerate}
 	\item V príkazovom riadku sa nastavíte do správneho priečinka (rýchly spôsob v TeXstuidu je Tools/Open External Terminal, a tam prípadne príkaz \verb|cd ..| na posun o priečinok vyššie).
-	\item V príkazovom riadku spustiť príkaz
+	\item V príkazovom riadku treba spustiť príkaz typu
 	\begin{verbatim}
-		latexdiff --flatten stara_verzia.tex nova_verzia.tex > diff.tex
+		latexdiff --flatten "stara_verzia.tex" "nova_verzia.tex" > "diff.tex"
 	\end{verbatim}
-	Vstupom je stará verzia dokumentu \verb|stara_verzia.tex| nová verzia \verb|nova_verzia.tex| a výstupom je súbor \verb|diff.tex|, v ktorom sú vyznačené zmeny. Nastavenie \verb|--flatten| je potrebné, keď sa dokument skladá z viacerých súborov (ako táto šablóna). Použitie skriptu na túto šablónu môže vyzerať takto
+	Vstupom je stará verzia dokumentu \verb|stara_verzia.tex|, nová verzia \verb|nova_verzia.tex| a výstupom je súbor \verb|diff.tex|, v ktorom sú vyznačené zmeny. Nastavenie \verb|--flatten| je potrebné, keď sa dokument skladá z viacerých súborov (ako táto šablóna). Použitie skriptu na túto šablónu môže vyzerať takto
 	\begin{verbatim}
-		latexdiff --flatten SK_verzia_stara\_Zaverecna_praca.tex SK_verzia\
-		_Zaverecna_praca.tex > Porovnanie_verzii\diff.tex
+		latexdiff --flatten "SK_verzia_stara\_Zaverecna_praca.tex" "SK_verzia\
+		_Zaverecna_praca.tex" > "Porovnanie_verzii\diff.tex"
 	\end{verbatim}
-	V príkazovom riadku teda musíte byť v priečinku \verb|ZaverecnaPracaMPM|, v ktorom sa nachádza priečinok so starou verziou\footnote{Na uchovávanie starých verzií aj tu výborne poslúži GitHub, ale ak ho nepoužívate, tak si priebežne zálohujte celý priečinok s prácou.} \verb|SK_verzia_stara| aj s novou verziou \verb|SK_verzia|, ak to máte inde, cesty si upravte, ale pozor na medzery v názvoch priečinkov.
-	\item Vytvorte priečinok \verb|Porovnanie_verzii| a dajte doňho všetky obrázky a dokumenty (podpriečinky \verb|figures| a \verb|documents|), ktoré sa do práce vkladajú a aj bibliografický \verb|.bib| súbor.
+	V príkazovom riadku teda musíte byť v priečinku \verb|ZaverecnaPracaMPM\praca|, v ktorom sa nachádza priečinok so starou verziou\footnote{Na uchovávanie starých verzií aj tu výborne poslúži GitHub, ale ak ho nepoužívate, tak si priebežne zálohujte celý priečinok s prácou.} \verb|SK_verzia_stara| aj s novou verziou \verb|SK_verzia| a musí byť vytvorený priečinok \verb|Porovnanie_verzii|. Ak máte iné umiestnenia, cesty si upravte. Pokiaľ nemáte v názvoch priečinkov a súborov medzery, tak úvodzovky v príkazoch nie sú potrebné.
+	\item Do priečinka \verb|Porovnanie_verzii| dajte všetky obrázky a dokumenty (podpriečinky \verb|figures| a \verb|documents|), ktoré sa do práce vkladajú a aj bibliografický \verb|.bib| súbor (všetko z novej verzie).
 	\item Súbor \verb|diff.tex| skompilujete, čím vytvoríte výsledné \verb|diff.pdf|, ktoré môžete spolu s aktuálnou verziou poslať školiteľovi.
 \end{enumerate}
 
